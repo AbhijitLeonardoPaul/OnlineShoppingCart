@@ -37,11 +37,12 @@ http://www.springframework.org/schema/tx http://www.springframework.org/schema/t
             </props>
       </property>
       <property name="annotatedClasses">
-            <list>
-                  
-                  <value>com.niit.model.Users</value>
-                  
-            </list>
+            <list><value>com.niit.model.Users</value> 
+                   <value>com.niit.model.Category</value>
+                   <value>com.niit.model.SubCategory</value>
+                   <value>com.niit.model.User</value>
+                   <value>com.niit.model.Product</value></list>
+                   
       </property>
 </bean>
 

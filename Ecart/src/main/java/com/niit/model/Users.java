@@ -61,4 +61,27 @@ public class Users implements Serializable
 		this.userId = userId;
 	}
 
+	
+	@Transient
+	private MultipartFile file;
+	private String userImage;
+
+	public MultipartFile getFile() {
+		return file;
+	}
+
+	public void setFile(MultipartFile file) {
+		this.file = file;
+	}
+
+	public String getUserImage() {
+		return userImage;
+	}
+
+	public void setUserImage(String userImage) {
+		this.userImage = userImage;
+	}
+	
+	
+	
 }

@@ -10,20 +10,28 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.niit.dao.CategoryDao;
 import com.niit.dao.UsersDao;
 import com.niit.model.Users;
 
 @Controller
 public class HomeController {
+	
+	@Autowired
+	CategoryDao  categoryDao;
 	@RequestMapping("/home")
-	public String home() {
-		return "home";
+	public ModelAndView home() {
+		
+		ModelAndView mv= new ModelAndView("home");
+		 mv.addObject("categoryList", categoryDao.getAllCategory());
+	        return mv;  
+	    
 	}
 
-	@RequestMapping("/menu")
+	/*@RequestMapping("/menu")
 	public String menu() {
 		return "menu";
-	}
+	}*/
 	@RequestMapping("/footer")
 	public String footer() {
 		return "footer";
@@ -41,8 +49,15 @@ public class HomeController {
 	}
 	
 	@RequestMapping("/products")
-	public String products() {
-		return "products";
+	public ModelAndView products() {
+		ModelAndView mv= new ModelAndView("products");
+		 mv.addObject("categoryList", categoryDao.getAllCategory());
+	        return mv; 
 }
+	@RequestMapping(value = "/loginPage", method = RequestMethod.GET)
+	public ModelAndView loginPage() {
+
+		return new ModelAndView("loginPage");
+	}
 	
 }
