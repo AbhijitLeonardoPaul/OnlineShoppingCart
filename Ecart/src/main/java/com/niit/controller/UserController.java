@@ -1,4 +1,4 @@
-package com.niit.controller;
+/*package com.niit.controller;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -34,10 +34,10 @@ public class UserController {
     public ModelAndView showform(){  
         return new ModelAndView("form","command",new Users());  
     } 
-	/*
+	
 	 It saves object into database. The @ModelAttribute puts request data 
      *  into model object. You need to mention RequestMethod.POST method  
-     *  because default request is GET */ 
+     *  because default request is GET  
     @RequestMapping(value="/save",method = RequestMethod.POST)  
     public ModelAndView save(@ModelAttribute("users") Users users , HttpServletRequest request, 
 			@RequestParam("file") MultipartFile file){  
@@ -71,15 +71,15 @@ public class UserController {
     	usersDao.addUsers(users);
         return new ModelAndView("redirect:/viewusers");//will redirect to viewusers request mapping  
     }
-     /*It provides list of users in model object   */
+     It provides list of users in model object   
     @RequestMapping("/viewusers")  
     public ModelAndView viewusers(){  
         List<Users> list=usersDao.getAllUsers();
         return new ModelAndView("viewusers","list",list);  
     }  
     
- /*    It displays object data into form for the given id.  
-     * The @PathVariable puts URL data into variable.*/  
+     It displays object data into form for the given id.  
+     * The @PathVariable puts URL data into variable.  
     @RequestMapping(value="/editusers/{id}" )  
     public ModelAndView edit(@PathVariable int id){  
         Users users=usersDao.getUsersById(id);  
@@ -87,15 +87,15 @@ public class UserController {
     }  
     
     
-    /* It updates model object.  */ 
+     It updates model object.   
     @RequestMapping(value="/editsave",method = RequestMethod.POST)  
     public ModelAndView editsave(@ModelAttribute("users") Users users){  
     	usersDao.updateUsers(users);
         return new ModelAndView("redirect:/viewusers");  
     }  
      
-    /*
-     It deletes record for the given id in URL and redirects to /viewusers  */ 
+    
+     It deletes record for the given id in URL and redirects to /viewusers   
     @RequestMapping(value="/deleteusers/{id}",method = RequestMethod.GET)  
     public ModelAndView delete(@PathVariable int id){ 
     	System.out.println("delete is called");
@@ -105,3 +105,4 @@ public class UserController {
      	
        
 }
+*/

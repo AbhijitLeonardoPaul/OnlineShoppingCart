@@ -44,4 +44,5 @@ public class CategoryController implements Serializable {
 		    List<Product> list=productDao.getAllProducts(subCategoryId);
 		    return new ModelAndView("products","productList",list);  
 		} 
+		
 }

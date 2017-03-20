@@ -5,6 +5,9 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.Transient;
+
+import org.springframework.web.multipart.MultipartFile;
 
 
 
@@ -17,6 +20,8 @@ public class Product implements Serializable{
 	private String productDescription;
 	private String productStock;
 	private double productPrice;
+	@Transient
+	private MultipartFile file;
 	private String productImage;
 	
 	@ManyToOne
@@ -78,6 +83,16 @@ public class Product implements Serializable{
 	public void setProductSubCategory(SubCategory productSubCategory) {
 		this.productSubCategory = productSubCategory;
 	}
+
+	public MultipartFile getFile() {
+		return file;
+	}
+
+	public void setFile(MultipartFile file) {
+		this.file = file;
+	}
 	
 
+	
+	
 }

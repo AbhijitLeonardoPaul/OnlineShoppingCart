@@ -12,6 +12,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.niit.model.Product;
 import com.niit.model.SubCategory;
+import com.niit.model.Users;
 
 
 @Repository("productDao")
@@ -22,6 +23,20 @@ public class ProductDaoImpl implements  ProductDao{
 
 	protected Session getSession() {
 		return sessionFactory.openSession();
+	}
+	public void addProducts(Product product) {
+		// TODO Auto-generated method stub
+
+		Session session = getSession();
+
+		String s = product.getProductName();
+
+		session.save(product);
+
+		session.flush();
+
+		session.close();
+
 	}
 
 	
@@ -43,5 +58,15 @@ public class ProductDaoImpl implements  ProductDao{
 		List<Product> productList = query.list();
 
 		return productList;
+	}
+	public List<Product> getAllProducts(){
+		Session session = getSession();
+
+		Query query = session.createQuery("from Product ");
+		
+		List<Product> productList = query.list();
+
+		return productList;
+		
 	}
 }

@@ -43,4 +43,12 @@ public class SubCategoryDaoImpl implements SubCategoryDao {
 
 		return subCategoryList;
 	}
+	public SubCategory getSubCategoryBysubCategoryId(int subCategoryId) {
+		Session session = getSession();
+
+		return (SubCategory) session.get(SubCategory.class, subCategoryId);
+	}
+	
+		
+	
 }
