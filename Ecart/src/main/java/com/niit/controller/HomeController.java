@@ -2,6 +2,9 @@ package com.niit.controller;
 
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -20,8 +23,9 @@ public class HomeController {
 	@Autowired
 	CategoryDao  categoryDao;
 	@RequestMapping("/home")
-	public ModelAndView home() {
-		
+	public ModelAndView home(HttpServletRequest  request , HttpSession session) {
+		session=request.getSession();
+		session.setAttribute("categoryList", categoryDao.getAllCategory());
 		ModelAndView mv= new ModelAndView("home");
 		 mv.addObject("categoryList", categoryDao.getAllCategory());
 	        return mv;  

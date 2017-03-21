@@ -6,21 +6,26 @@
 <html>
 <h1>Product's List</h1>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+
+<body>
 <table border="2" width="70%" cellpadding="2">  
 <tr><th>Id</th><th>Name</th><th>Description</th><th>Stock</th><th>Price</th><th>image</th></tr>  
-   <c:forEach var="product" items="${productList}">   
+   <c:forEach var="product" items="${list}">   
    <tr>  
    <td>${product.productId}</td>  
    <td>${product.productName}</td>  
-   <td>${product.productDescription}</td>  
+   <td>${product.productDescription}</td>
    <td>${product.productStock}</td> 
    <td>${product.productPrice}</td> 
    <td>${product.productImage}</td>
   
-   
+   <td><a href="${pageContext.request.contextPath}/editproduct/${product.productId}">Edit</a></td>  
+   <td><a href="${pageContext.request.contextPath}/deleteproduct/${product.productId}">Delete</a></td> 
    </tr>  
    </c:forEach>  
    </table>  
-
+   
+   <br>
+   <a href="productentry">Add New product</a>
+</body>
 </html>

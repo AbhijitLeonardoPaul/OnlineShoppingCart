@@ -1,4 +1,4 @@
-package com.niit.controller;
+/*package com.niit.controller;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -26,12 +26,12 @@ import com.niit.dao.SubCategoryDao;
 import com.niit.dao.UsersDao;
 
 @Controller
-public class productController implements Serializable {
+public class ProductController implements Serializable {
 	@Autowired
 	ProductDao productDao;
 	@Autowired
 	SubCategoryDao  subCategoryDao;
-	@RequestMapping("/productEntry")
+	@RequestMapping("/productentry")
 	public ModelAndView showform() {
 		return new ModelAndView("productEntry", "command", new Product());
 	}
@@ -78,6 +78,22 @@ public class productController implements Serializable {
 		return new ModelAndView("myproducts", "list", list);
 	}
 
-
+	@RequestMapping(value="/editproduct/{id}" )  
+    public ModelAndView edit(@PathVariable int id){  
+        Product Product=productDao.getProductById(id); 
+        return new ModelAndView("producteditform","command",Product);  
+    }  
+	@RequestMapping(value="/editsave",method = RequestMethod.POST)  
+    public ModelAndView editsave(@ModelAttribute("Product") Product Product){  
+		productDao.updateProducts(Product);
+        return new ModelAndView("redirect:/myproduct");  
+    }  
+	@RequestMapping(value="/deletproduct/{id}",method = RequestMethod.GET)  
+    public ModelAndView delete(@PathVariable int id){ 
+    	System.out.println("delete is called");
+       productDao.deleteProducts(id);
+        return new ModelAndView("redirect:/myproducts");  
+    }  
 	}
 
+*/

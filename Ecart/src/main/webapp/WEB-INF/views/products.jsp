@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <!-- <style>
 
@@ -71,28 +71,36 @@
 
 <body>
 
-<%@include file="menu.jsp"%>
+	<%@include file="menu.jsp"%>
 
 
-<script>
-$(document).ready(function() {
-    $('#list').click(function(event){event.preventDefault();$('#products .item').addClass('list-group-item');});
-    $('#grid').click(function(event){event.preventDefault();$('#products .item').removeClass('list-group-item');$('#products .item').addClass('grid-group-item');});
-});
-</script>
+	<script>
+		$(document).ready(function() {
+			$('#list').click(function(event) {
+				event.preventDefault();
+				$('#products .item').addClass('list-group-item');
+			});
+			$('#grid').click(function(event) {
+				event.preventDefault();
+				$('#products .item').removeClass('list-group-item');
+				$('#products .item').addClass('grid-group-item');
+			});
+		});
+	</script>
 
 
 
-<div class="container">
-    <div class="well well-sm">
-        <strong>Category Title</strong>
-        <div class="btn-group">
-            <a href="#" id="list" class="btn btn-default btn-sm"><span class="glyphicon glyphicon-th-list">
-            </span>List</a> <a href="#" id="grid" class="btn btn-default btn-sm"><span
-                class="glyphicon glyphicon-th"></span>Grid</a>
-        </div>
-    </div>
-  <!--   <div id="products" class="row list-group">
+	<div class="container">
+		<div class="well well-sm">
+			<strong>Category Title</strong>
+			<div class="btn-group">
+				<a href="#" id="list" class="btn btn-default btn-sm"><span
+					class="glyphicon glyphicon-th-list"> </span>List</a> <a href="#"
+					id="grid" class="btn btn-default btn-sm"><span
+					class="glyphicon glyphicon-th"></span>Grid</a>
+			</div>
+		</div>
+		<!--   <div id="products" class="row list-group">
         <div class="item  col-xs-4 col-lg-4">
             <div class="thumbnail">
                 <img class="group list-group-image" src="http://placehold.it/400x250/000/fff" alt="" />
@@ -114,29 +122,30 @@ $(document).ready(function() {
                 </div>
             </div>
         </div> -->
-        <c:forEach var="product" items="${productList}"> 
-        <div class="item  col-xs-4 col-lg-4">
-            <div class="thumbnail">
-                <img class="group list-group-image" src="http://placehold.it/400x250/000/fff" alt="" />
-                <div class="caption">
-                    <h4 class="group inner list-group-item-heading">
-                        ${product.productName}</h4>
-                    <p class="group inner list-group-item-text">
-                        ${product.productDescription}</p>
-                    <div class="row">
-                        <div class="col-xs-12 col-md-6">
-                            <p class="lead">
-                                ${product.productPrice}</p>
-                        </div>
-                        <div class="col-xs-12 col-md-6">
-                            <a class="btn btn-success" href="http://www.jquery2dotnet.com">Add to cart</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        </c:forEach>  
-       <!--  <div class="item  col-xs-4 col-lg-4">
+		<c:forEach var="product" items="${productList}">
+			<div class="item  col-xs-4 col-lg-4">
+				<div class="thumbnail">
+					<img class="group list-group-image"
+						src="${pageContext.request.contextPath}/${product.productImage}" alt="" />
+					<div class="caption">
+						<h4 class="group inner list-group-item-heading">
+							${product.productName}</h4>
+						<p class="group inner list-group-item-text">
+							${product.productDescription}</p>
+						<div class="row">
+							<div class="col-xs-12 col-md-6">
+								<p class="lead">${product.productPrice}</p>
+							</div>
+							<div class="col-xs-12 col-md-6">
+								<a class="btn btn-success" href="http://www.jquery2dotnet.com">Add
+									to cart</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</c:forEach>
+		<!--  <div class="item  col-xs-4 col-lg-4">
             <div class="thumbnail">
                 <img class="group list-group-image" src="http://placehold.it/400x250/000/fff" alt="" />
                 <div class="caption">
@@ -220,8 +229,8 @@ $(document).ready(function() {
                 </div>
             </div>
         </div> -->
-    </div>
-</div>
-<%@include file="footer.jsp"%>
+	</div>
+	</div>
+	<%@include file="footer.jsp"%>
 </body>
 </html>

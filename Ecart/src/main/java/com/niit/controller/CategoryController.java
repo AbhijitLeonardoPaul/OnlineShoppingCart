@@ -16,16 +16,6 @@ import com.niit.model.Product;
 @Controller
 public class CategoryController implements Serializable {
 
-	/*@Autowired
-	CategoryDao  categoryDao;
-	 @RequestMapping("/testmenu")  
-	    public ModelAndView menu( ){  
-		 //System.out.println("cat id "+categoryId);
-		 ModelAndView mv= new ModelAndView("menu");
-		 mv.addObject("categoryList", categoryDao.getAllCategory());
-	        return mv;  
-	    } */
-	
 	
 	
 		@Autowired
@@ -42,7 +32,8 @@ public class CategoryController implements Serializable {
 		@RequestMapping("/showProductsBySubCategory/{subCategoryId}")  
 		public ModelAndView showProducts(@PathVariable("subCategoryId")  int subCategoryId){  
 		    List<Product> list=productDao.getAllProducts(subCategoryId);
-		    return new ModelAndView("products","productList",list);  
+		    return new ModelAndView("products","productList",list); 
+		   
 		} 
 		
 }

@@ -69,4 +69,56 @@ public class ProductDaoImpl implements  ProductDao{
 		return productList;
 		
 	}
+	public void updateProducts(Product Product) {
+		// TODO Auto-generated method stub
+		Session session = getSession();
+
+		String s = Product.getProductName();
+
+		session.update(Product);
+
+		session.flush();
+
+		session.close();
+	}
+	public void deleteUsers(int productId) {
+		// TODO Auto-generated method stub
+		
+		Session session = getSession();
+
+		Query query = session.createQuery("from Product where productId = ?");
+		query.setInteger(0, productId);
+
+		Product p=(Product) query.uniqueResult();
+		session.delete(p);
+		session.flush();
+
+		session.close();
+		
+	}
+	public Product getProductById(int ProductId) {
+		// TODO Auto-generated method stub
+		Session session = getSession();
+		return (Product) session.get(Product.class, ProductId);
+		
+	}
+	public Product getProductByProductName(String ProductName) {
+		// TODO Auto-generated method stub
+		Session session = getSession();
+
+		Query query = session.createQuery("from Product where ProductName = ?");
+		query.setString(0, ProductName);
+
+		return (Product) query.uniqueResult();
+
+	}
+	public void deleteProducts(int productId) {
+		// TODO Auto-generated method stub
+		
+	}
+	public Product getProductsByProductName(String productName) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }

@@ -35,11 +35,11 @@ xmlns:beans="http://www.springframework.org/schema/beans"
         <access-denied-handler error-page="/403" />
  
         <form-login login-page='/loginPage' login-processing-url="/j_spring_security_check"
-            default-target-url="/index" always-use-default-target="false"
+            default-target-url="/home" always-use-default-target="false"
             authentication-failure-url="/loginPage?error=true" username-parameter="username"
             password-parameter="password" />
  
-        <logout logout-url="/logout" logout-success-url="/index"
+        <logout logout-url="/logout" logout-success-url="/home"
             delete-cookies="JSESSIONID" invalidate-session="true" />
  
     </http>
