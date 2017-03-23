@@ -11,7 +11,7 @@ public interface ProductDao {
 	
 	public void addProducts(Product product);
 	public void updateProducts(Product Product);
-	public void deleteProducts(int productId);
-	public Product getProductsByProductName(String productName);
+	public void deleteProduct(int productId);
+	//public Product getProductsByProductName(String productName);
 	public Product getProductById(int ProductId);
 }

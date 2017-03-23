@@ -1,4 +1,4 @@
-/*package com.niit.controller;
+package com.niit.controller;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -86,14 +86,13 @@ public class ProductController implements Serializable {
 	@RequestMapping(value="/editsave",method = RequestMethod.POST)  
     public ModelAndView editsave(@ModelAttribute("Product") Product Product){  
 		productDao.updateProducts(Product);
-        return new ModelAndView("redirect:/myproduct");  
+        return new ModelAndView("redirect:/myproducts");  
     }  
-	@RequestMapping(value="/deletproduct/{id}",method = RequestMethod.GET)  
+	@RequestMapping(value="/deleteproduct/{id}",method = RequestMethod.GET)  
     public ModelAndView delete(@PathVariable int id){ 
     	System.out.println("delete is called");
-       productDao.deleteProducts(id);
+       productDao.deleteProduct(id);
         return new ModelAndView("redirect:/myproducts");  
     }  
 	}
 
-*/

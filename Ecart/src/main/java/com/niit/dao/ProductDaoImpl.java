@@ -81,7 +81,7 @@ public class ProductDaoImpl implements  ProductDao{
 
 		session.close();
 	}
-	public void deleteUsers(int productId) {
+	public void deleteProduct(int productId) {
 		// TODO Auto-generated method stub
 		
 		Session session = getSession();
@@ -112,13 +112,6 @@ public class ProductDaoImpl implements  ProductDao{
 		return (Product) query.uniqueResult();
 
 	}
-	public void deleteProducts(int productId) {
-		// TODO Auto-generated method stub
-		
-	}
-	public Product getProductsByProductName(String productName) {
-		// TODO Auto-generated method stub
-		return null;
-	}
+	
 
 }
