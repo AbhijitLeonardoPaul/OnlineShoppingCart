@@ -81,11 +81,14 @@ public class ProductController implements Serializable {
 	@RequestMapping(value="/editproduct/{id}" )  
     public ModelAndView edit(@PathVariable int id){  
         Product Product=productDao.getProductById(id); 
+        
         return new ModelAndView("producteditform","command",Product);  
     }  
 	@RequestMapping(value="/editsave",method = RequestMethod.POST)  
     public ModelAndView editsave(@ModelAttribute("Product") Product Product){  
 		productDao.updateProducts(Product);
+		SubCategory s=subCategoryDao.getSubCategoryBysubCategoryId(Product.getProductSubCategory().getSubCategoryId());
+		Product.setProductSubCategory(s);
         return new ModelAndView("redirect:/myproducts");  
     }  
 	@RequestMapping(value="/deleteproduct/{id}",method = RequestMethod.GET)  

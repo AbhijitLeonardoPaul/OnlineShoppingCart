@@ -63,5 +63,8 @@ public class HomeController {
 
 		return new ModelAndView("loginPage");
 	}
-	
+	@RequestMapping("/cart")
+	public String cart() {
+		return "cart";
+}
 }

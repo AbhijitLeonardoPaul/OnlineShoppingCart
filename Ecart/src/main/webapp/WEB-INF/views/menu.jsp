@@ -37,24 +37,7 @@
              </c:forEach>
              
      
-        
-        <!-- <li class="dropdown">
-          <a class="dropdown-toggle" data-toggle="dropdown" href="#">AAA <span class="caret"></span></a>
-            <ul class="dropdown-menu">
-          
-          display category names as menu option 
-           
-           
-          </ul>
-        </li>
-        <li class="dropdown">
-        <a class="dropdown-toggle" data-toggle="dropdown" href="#">CLOTHING <span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><a href="#">Men</a></li>
-            <li><a href="#">Women</a></li>
-            
-          </ul>
-        </li> -->
+      
         
         <li><a href="#"><u>OFFER ZONE</u></a></li>
       </ul>
@@ -62,12 +45,12 @@
          <c:if test="${pageContext.request.userPrincipal.name == null}">
       
         <li><a href="register"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-        <li><a href="login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+        <li><a href="${pageContext.request.contextPath}/loginPage"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
         </c:if>
         <c:if test="${pageContext.request.userPrincipal.name != null}">
         
         
-        <li><a href="#"><span class="glyphicon glyphicon-shopping-cart"></span> </a></li>
+        <li><a href="/Ecart/cart"><span class="glyphicon glyphicon-shopping-cart"></span> </a></li>
 						<li><a href="${pageContext.request.contextPath}/logout"><span class="glyphicon glyphicon-log-out"></span>
 						Logout</a></li>
 						</c:if>
