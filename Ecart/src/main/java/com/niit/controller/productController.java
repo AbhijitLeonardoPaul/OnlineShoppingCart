@@ -20,10 +20,10 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.niit.model.Product;
 import com.niit.model.SubCategory;
-import com.niit.model.Users;
+import com.niit.model.User;
 import com.niit.dao.ProductDao;
 import com.niit.dao.SubCategoryDao;
-import com.niit.dao.UsersDao;
+import com.niit.dao.UserDao;
 
 @Controller
 public class ProductController implements Serializable {

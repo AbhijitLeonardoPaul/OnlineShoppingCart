@@ -14,8 +14,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.niit.dao.CategoryDao;
-import com.niit.dao.UsersDao;
-import com.niit.model.Users;
+import com.niit.dao.UserDao;
+import com.niit.model.User;
 
 @Controller
 public class HomeController {
@@ -41,11 +41,11 @@ public class HomeController {
 		return "footer";
 	
 	}
-	@RequestMapping("/register")
+/*	@RequestMapping("/register")
 	public String register() {
 		return "register";
 	
-	}
+	}*/
 	@RequestMapping("/login")
 	public String login() {
 		return "login";

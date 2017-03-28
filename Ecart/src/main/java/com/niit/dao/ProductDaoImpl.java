@@ -12,7 +12,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.niit.model.Product;
 import com.niit.model.SubCategory;
-import com.niit.model.Users;
+import com.niit.model.User;
 
 
 @Repository("productDao")

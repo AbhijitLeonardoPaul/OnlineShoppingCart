@@ -10,7 +10,7 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.niit.model.Category;
-import com.niit.model.Users;
+import com.niit.model.User;
 @Repository("categoryDao")
 @Transactional
 public class CategoryDaoImpl implements CategoryDao {
