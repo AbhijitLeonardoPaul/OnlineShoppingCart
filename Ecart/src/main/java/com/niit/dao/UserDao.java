@@ -8,11 +8,11 @@ public interface UserDao {
 
 	public void addUser(User user);
 
-	/*public Users getUsersById(int userId);
+	public User getUsersById(String userId);
 
-	public List<Users> getAllUser();
+	/*public List<Users> getAllUser();
 
-	public Users getUserByUsername(String userName);*/
+	public Users getUserByUsername(String userName)
 	
-
+*/
 }

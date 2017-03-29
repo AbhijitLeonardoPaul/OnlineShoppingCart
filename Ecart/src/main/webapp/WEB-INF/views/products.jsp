@@ -116,7 +116,7 @@
 								<p class="lead">${product.productPrice}</p>
 							</div>
 							<div class="col-xs-12 col-md-6">
-								<a class="btn btn-success" href=/Ecart/cart>Add
+								<a class="btn btn-success" href="${pageContext.request.contextPath}/cart/addItem/${product.productId}">Add
 									to cart</a>
 							</div>
 						</div>

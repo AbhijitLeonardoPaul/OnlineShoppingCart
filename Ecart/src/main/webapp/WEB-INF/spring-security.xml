@@ -21,7 +21,7 @@ xmlns:beans="http://www.springframework.org/schema/beans"
         <intercept-url pattern="/logout" access="isAnonymous()" />
  
  		<intercept-url pattern="/buyproduct" access="hasRole('ROLE_USER')" />
-        <intercept-url pattern="/cart"
+        <intercept-url pattern="/cart/addItem/*"
             access="hasAnyRole('ROLE_USER', 'ROLE_ADMIN')" />
             <intercept-url pattern="/profile"
             access="hasAnyRole('ROLE_USER', 'ROLE_ADMIN')" />

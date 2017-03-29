@@ -42,14 +42,14 @@ public class UserDaoImpl implements UserDao {
 		session.close();
 
 	}
-/*
-	public Users getUsersById(int userId) {
+
+	public User getUsersById(String userId) {
 		// TODO Auto-generated method stub
 		Session session = getSession();
-		return (Users) session.get(Users.class, userId);
+		return (User) session.get(User.class, userId);
 	}
 
-	public List<Users> getAllUsers() {
+	/*public List<Users> getAllUsers() {
 		// TODO Auto-generated method stub
 		Session session = getSession();
 
