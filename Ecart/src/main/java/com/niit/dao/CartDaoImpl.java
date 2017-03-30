@@ -36,5 +36,14 @@ public class CartDaoImpl implements CartDao {
 
 	}
 
+	public void updateCart(Cart cart) {
+		Session session = getSession();
+		
+		session.update(cart);
+		session.flush();
+
+		session.close();
+	}
+
 	
 }

@@ -54,12 +54,41 @@ public class CartItemsDaoImpl implements CartItemsDao{
 		 query.setInteger(0, cartItemId);
 
 		CartItems c=(CartItems) query.uniqueResult();
-		
+		System.out.println("item id "+c.getCartItemId());
 		session.delete(c);
+		
 		session.flush();
 
 		session.close();
 	
+	}
+
+	public List<CartItems> getCartItemByCartId(int cartId) {
+		// TODO Auto-generated method stub
+String hql = "from CartItems where cartId= ? and status = ?";
+       
+		
+		Session session = (Session) getSession();
+		Query query = (Query) session.createQuery(hql);
+		
+		query.setInteger(0, cartId);
+		query.setString(1, "New");
+		@SuppressWarnings("unchecked")
+		
+		List<CartItems> list = (List<CartItems>) query.list();
+		
+		if(list == null || list.isEmpty())
+		{
+			session.flush();
+			session.close();
+			return null;
+		}
+		else
+		{
+			session.flush();
+			session.close();
+			return list;
+		}
 	}
 	
 	

@@ -29,7 +29,6 @@ public class CartController implements Serializable{
 	
 	@Autowired
 	  ProductDao productDao;
-	  
 	@Autowired
 	  CartItemsDao cartItemsDao;
 	@Autowired
@@ -42,12 +41,12 @@ public class CartController implements Serializable{
 	 {
 		 Cart c1=cartItem.getCart();
 		 c1.setGrandTotal(c1.getGrandTotal()+cartItem.getProduct().getProductPrice());
-		 cartItemsDao.saveOrUpdate(cartItem);
+		cartDao.updateCart(c1);
 	 }
 	 
 	 @RequestMapping("/cart/addItem/{productId}")
 	 public ModelAndView addItemToCart(@PathVariable int productId, Principal principal, HttpSession session){
-		 ModelAndView mv = new ModelAndView("redirect:/cart");
+		 ModelAndView mv = new ModelAndView("redirect:/Showcart");
 		 String id = principal.getName();
 		 System.out.println("logged in user "+id);
 		 
@@ -67,12 +66,14 @@ public class CartController implements Serializable{
 			 userDao.editUsers(user);*/
 			 
 			 CartItems cartItem = new CartItems();
+			 cartItem.setStatus("New");
 			 cartItem.setCart(c);
 			 cartItem.setProduct(product);
 			 cartItem.setQuantity(1);
 			 cartItem.setSubTotal(product.getProductPrice());
+			
 			 cartItemsDao.saveOrUpdate(cartItem);
-			 updateCart(cartItem);
+			// updateCart(cartItem);
 			 session.setAttribute("cart", cartItem.getCart());
 			 
 			 return mv;
@@ -84,27 +85,77 @@ public class CartController implements Serializable{
 		 
 		 for(CartItems cartItem:cartItems)
 		 {
-			if(cartItem.getProduct().getProductId()==productId)
+			if(cartItem.getProduct().getProductId()==productId  && cartItem.getStatus().compareTo("New")==0)
 			{
+				
 				cartItem.setQuantity(cartItem.getQuantity()+1);
 				cartItem.setSubTotal(cartItem.getSubTotal()+product.getProductPrice());
 				cartItemsDao.saveOrUpdate(cartItem);
-				updateCart(cartItem);
+				//updateCart(cartItem);
 				session.setAttribute("cart", cartItem.getCart());
 				return mv;
 			}
 		 }
 		 
 		 CartItems item = new CartItems();
+		 item.setStatus("New");
 		 item.setCart(cart);
 		 item.setProduct(product);
 		 item.setQuantity(1);
 		 item.setSubTotal(product.getProductPrice());
 		 cartItemsDao.saveOrUpdate(item);
-		 updateCart(item);
+		// updateCart(item);
 		 session.setAttribute("cart", item.getCart());
 		 return mv;
 		 
 	 }
-	
+	 
+	 @RequestMapping("/Showcart")
+public ModelAndView Showcart(HttpSession session,Principal user) {
+		 
+		 String id=user.getName();
+		 
+		 User u=userDao.getUsersById(id);
+		 
+		 
+		 Cart cart = (Cart)session.getAttribute("cart");
+		 
+		 if(cart==null)
+		 {
+			 Cart c=u.getCart();
+			 session.setAttribute("cart", c);
+			 cart = (Cart)session.getAttribute("cart");
+		 }
+		 
+		 
+		 System.out.println("Id "+cart.getCartID());
+		 
+		
+		 List <CartItems> newCartItems=cartItemsDao.getCartItemByCartId(cart.getCartID());
+		 
+		 
+		 return new ModelAndView("cart", "list", newCartItems);
+		
+		}
+	 
+	 
+	 @RequestMapping(value="/delete/{cartitemid}",method = RequestMethod.GET)  
+	    public ModelAndView delete(@PathVariable int cartitemid){ 
+	    	System.out.println("delete is called");
+	       cartItemsDao.delete(cartitemid);
+	        return new ModelAndView("redirect:/Showcart");  
+	    }  
+	 
+	/* @RequestMapping(value="/cart/addItem/{productId}",method = RequestMethod.POST)  
+	    public ModelAndView save(@ModelAttribute("cart") CartItems cartItems){  
+			cartItems.setStatus("new");
+			
+			CartItems cart=new CartItems();
+			
+			
+			cartItemsDao.saveOrUpdate(cartItems);
+	    	
+	        return new ModelAndView("redirect:/Ecart/cart");
+	    }
+	*/
 }

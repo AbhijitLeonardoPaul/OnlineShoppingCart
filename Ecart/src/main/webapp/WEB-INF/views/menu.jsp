@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"  isELIgnored="false"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib uri="http://www.springframework.org/security/tags" prefix="security" %>
  <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   
@@ -40,7 +41,16 @@
       
         
         <li><a href="#"><u>OFFER ZONE</u></a></li>
-      </ul>
+      
+     
+<security:authorize access="hasRole('ROLE_ADMIN')">				
+  <li><a href="myproducts"><u>Manage Product</u> </a></li> 
+   </security:authorize>
+  
+</ul>
+
+
+      
          <ul class="nav navbar-nav navbar-right">
          <c:if test="${pageContext.request.userPrincipal.name == null}">
       
@@ -50,7 +60,7 @@
         <c:if test="${pageContext.request.userPrincipal.name != null}">
         
         
-        <li><a href="/Ecart/cart"><span class="glyphicon glyphicon-shopping-cart"></span> </a></li>
+        <li><a href="Showcart"><span class="glyphicon glyphicon-shopping-cart"></span> </a></li>
 						<li><a href="${pageContext.request.contextPath}/logout"><span class="glyphicon glyphicon-log-out"></span>
 						Logout</a></li>
 						</c:if>

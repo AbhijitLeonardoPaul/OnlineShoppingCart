@@ -1,23 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
-<!-- <html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-
-</head>
-
-<div class="container-fluid bg-3 text-center">
-  <footer>
-<div class="footer navbar-fixed-bottom">
-<br>
-  <p>Posted by: <font color="blue">Abhijit Leonardo Paul</font> </p>
-  <p>Contact information: <a href="https://www.instagram.com/abhi_the_boss/">abhi_the_boss</a>.</p>
-</footer>
-
-
-
-</html> -->
 
 
 
@@ -71,9 +54,9 @@ footer { background-color:#0c1a1e; min-height:350px; font-family: 'Open Sans', s
       <div class="col-md-4 col-sm-6 footerleft ">
         <div class="logofooter"> Logo</div>
         <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley.</p>
-        <p><i class="fa fa-map-pin"></i> 210, Aggarwal Tower, Rohini sec 9, New Delhi -        110085, INDIA</p>
-        <p><i class="fa fa-phone"></i> Phone (India) : +91 9999 878 398</p>
-        <p><i class="fa fa-envelope"></i> E-mail : info@webenlance.com</p>
+        <p><i class="fa fa-map-pin"></i> 138A/1, Naskarpara Road, Kolkata -       700041, INDIA</p>
+        <p><i class="fa fa-phone"></i> Phone (India) : +91 89614 05832</p>
+        <p><i class="fa fa-envelope"></i> E-mail : abhitheboss@live.com</p>
         
       </div>
       <div class="col-md-2 col-sm-6 paddingtop-bottom">
@@ -96,10 +79,21 @@ footer { background-color:#0c1a1e; min-height:350px; font-family: 'Open Sans', s
           <p>facebook crack the movie advertisment code:what it means for you <span>August 3,2015</span></p>
         </div>
       </div>
-      <div class="col-md-3 col-sm-6 paddingtop-bottom">
+      <div class="col-md-3 col-sm-6 paddingtop-bottom"> 
+      
         <div class="fb-page" data-href="https://www.facebook.com/facebook" data-tabs="timeline" data-height="300" data-small-header="false" style="margin-bottom:15px;" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true">
           <div class="fb-xfbml-parse-ignore">
-            <blockquote cite="https://www.facebook.com/facebook"><a href="https://www.facebook.com/facebook">Facebook</a></blockquote>
+            <blockquote cite="https://www.facebook.com/facebook"><a href="https://www.facebook.com/Abhijit1992">Facebook</a></blockquote>
+          </div>
+        </div>
+        <div class="Google-page" data-href="https://plus.google.com" data-tabs="timeline" data-height="300" data-small-header="false" style="margin-bottom:15px;" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true">
+          <div class="fb-xfbml-parse-ignore">
+            <blockquote cite="https://plus.google.com"><a href="https://plus.google.com/u/0/100501423101344361712">Google+</a></blockquote>
+          </div>
+        </div>
+        <div class="Twitter-page" data-href="https://twitter.com" data-tabs="timeline" data-height="300" data-small-header="false" style="margin-bottom:15px;" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true">
+          <div class="fb-xfbml-parse-ignore">
+            <blockquote cite="https://twitter.com"><a href="https://twitter.com/abhijitleonardo">Twitter</a></blockquote>
           </div>
         </div>
       </div>

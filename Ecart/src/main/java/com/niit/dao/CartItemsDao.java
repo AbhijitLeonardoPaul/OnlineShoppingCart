@@ -12,5 +12,5 @@ public boolean saveOrUpdate(CartItems cartItem);
 	
 	/*public CartItems get(String cartItemId);*/
 	
-	//public List<CartItems> getCartItemByUserId(String userId);
+	public List<CartItems> getCartItemByCartId(int cartId);
 }
