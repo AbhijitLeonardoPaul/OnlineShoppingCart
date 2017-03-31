@@ -90,6 +90,12 @@ String hql = "from CartItems where cartId= ? and status = ?";
 			return list;
 		}
 	}
+
+	public CartItems get(int cartItemId) {
+		// TODO Auto-generated method stub
+		Session session = getSession();
+		return (CartItems) session.get(CartItems.class, cartItemId);
+	}
 	
 	
 	

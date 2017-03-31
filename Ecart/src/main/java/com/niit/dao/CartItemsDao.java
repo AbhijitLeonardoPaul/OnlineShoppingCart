@@ -10,7 +10,7 @@ public boolean saveOrUpdate(CartItems cartItem);
 	
 	public void delete(int cartItemId);
 	
-	/*public CartItems get(String cartItemId);*/
+	public CartItems get(int cartItemId);
 	
 	public List<CartItems> getCartItemByCartId(int cartId);
 }

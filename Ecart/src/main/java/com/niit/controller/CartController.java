@@ -140,8 +140,24 @@ public ModelAndView Showcart(HttpSession session,Principal user) {
 	 
 	 
 	 @RequestMapping(value="/delete/{cartitemid}",method = RequestMethod.GET)  
-	    public ModelAndView delete(@PathVariable int cartitemid){ 
-	    	System.out.println("delete is called");
+	    public ModelAndView delete(@PathVariable int cartitemid ,Principal user, HttpSession session){ 
+ String id=user.getName();
+		 
+		 User u=userDao.getUsersById(id);
+			
+		 Cart c=u.getCart();
+		 
+		 List<CartItems>  list=c.getCartItems();
+		 CartItems item=cartItemsDao.get(cartitemid);
+		 list.remove(item);
+		 
+		 System.out.println("delete is called");
+	    	
+	    	
+	    	
+	    	
+	    	
+	    
 	       cartItemsDao.delete(cartitemid);
 	        return new ModelAndView("redirect:/Showcart");  
 	    }  

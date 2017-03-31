@@ -91,15 +91,10 @@
 						<td data-th="Subtotal" class="text-center">${cartItems.subTotal}</td>
 
 						<td class="actions" data-th="">
-							<button class="btn btn-info btn-sm">
-								<i class="fa fa-refresh"></i>
-							</button>
-							<button class="btn btn-danger btn-sm">
-								<i class="fa fa-trash-o"></a></i>
-							</button>
-						<td><a
-							href="${pageContext.request.contextPath}/delete/${cartItems.cartItemId}">Delete</a>
-						</td>
+							
+							
+							<a href="${pageContext.request.contextPath}/delete/${cartItems.cartItemId}" class="btn btn-danger btn-sm" ><i class="fa fa-trash-o"></a></td>
+							
 					</tr>
 				</c:forEach>
 

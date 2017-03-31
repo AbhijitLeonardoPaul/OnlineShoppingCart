@@ -47,7 +47,7 @@ public class Cart implements Serializable {
 	public void setUser(User user) {
 		this.user = user;
 	}*/
-	@OneToMany(mappedBy="cart", fetch=FetchType.EAGER, cascade=CascadeType.ALL)
+	@OneToMany(mappedBy="cart", fetch=FetchType.LAZY, cascade=CascadeType.ALL)
 	private List<CartItems> cartItems;
 
 	public List<CartItems> getCartItems() {
