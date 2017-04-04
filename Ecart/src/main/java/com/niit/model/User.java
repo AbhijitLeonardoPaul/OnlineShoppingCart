@@ -60,6 +60,15 @@ public class User implements Serializable {
 	public void setCart(Cart cart) {
 		this.cart = cart;
 	}
+	@OneToOne
+	@JoinColumn(name="billingID")
+	BillingAddress billingAddress;
+	public BillingAddress getBillingAddress() {
+		return billingAddress;
+	}
+	public void setBillingAddress(BillingAddress billingAddress) {
+		this.billingAddress = billingAddress;
+	}
 
 
 }

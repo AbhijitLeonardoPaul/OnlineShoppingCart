@@ -43,6 +43,7 @@ http://www.springframework.org/schema/tx http://www.springframework.org/schema/t
                    <value>com.niit.model.Cart</value>
                    <value>com.niit.model.CartItems</value>
                    <value>com.niit.model.Product</value>
+                   <value>com.niit.model.BillingAddress</value>
                    </list>
                    
       </property>

@@ -105,11 +105,11 @@ footer { background-color:#0c1a1e; min-height:350px; font-family: 'Open Sans', s
 <div class="copyright">
   <div class="container">
     <div class="col-md-6">
-      <p>© 2016 - All Rights with Webenlance</p>
+      <p>© 2016 - All Rights with abhitheboss</p>
     </div>
     <div class="col-md-6">
       <ul class="bottom_ul">
-        <li><a href="#">webenlance.com</a></li>
+        <li><a href="https://www.instagram.com/abhi_the_boss/">abhi_the_boss</a></li>
         <li><a href="#">About us</a></li>
         <li><a href="#">Blog</a></li>
         <li><a href="#">Faq's</a></li>

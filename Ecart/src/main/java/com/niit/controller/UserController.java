@@ -17,8 +17,10 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.niit.dao.BillingAddressDao;
 import com.niit.dao.CartDao;
 import com.niit.dao.UserDao;
+import com.niit.model.BillingAddress;
 import com.niit.model.Cart;
 import com.niit.model.User;
 
@@ -30,6 +32,8 @@ public class UserController {
 	  UserDao userDao;
 	  @Autowired
 	  CartDao cartDao;
+	  @Autowired 
+	  BillingAddressDao billingAddressDao;
 	@RequestMapping("/register")  
     public ModelAndView showform(){  
         return new ModelAndView("register","command",new User());  
@@ -46,6 +50,11 @@ public class UserController {
 		cartDao.addCart(cart);
 		//cart.setUser(user);
 		user.setCart(cart);
+		
+		BillingAddress Address = new BillingAddress();
+		billingAddressDao.addAddress(Address);
+		user.setBillingAddress(Address);
+		
 		
     	userDao.addUser(user);
         return new ModelAndView("redirect:/home");
