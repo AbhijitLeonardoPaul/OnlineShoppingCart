@@ -20,14 +20,14 @@ public class BillingAddressDaoImpl implements BillingAddressDao {
 	protected Session getSession() {
 		return sessionFactory.openSession();
 	}
-	public void addAddress(BillingAddress Address) {
+	public void addAddress(BillingAddress billingAddress) {
 		// TODO Auto-generated method stub
 
 		Session session = getSession();
 
-		int a = Address.getBillingID();
+		int a = billingAddress.getBillingID();
 
-		session.save(Address);
+		session.save(billingAddress);
 
 		session.flush();
 
