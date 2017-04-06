@@ -5,6 +5,11 @@
 
 
 <!DOCTYPE html>
+<style>
+div.ex4 {
+    padding: 25px;
+}
+</style>
 
 <html lang="en">
 <head>
@@ -188,7 +193,8 @@
             <div class="col-lg-3 col-md-4 col-xs-6 thumb">
                 <a class="thumbnail" href="showProductsBySubCategory/30003">
                     <img class="img-responsive" src="resources/images/img7.jpg" alt="">
-                </a>
+                </a><font color="white">This is some text!</font>
+                
             </div>
              
             <div class="col-lg-3 col-md-4 col-xs-6 thumb">
@@ -198,10 +204,11 @@
             </div>
             <div class="col-lg-3 col-md-4 col-xs-6 thumb">
                 <a class="thumbnail" href="showProductsBySubCategory/30103">
-                    <img class="img-responsive" src="resources/images/img9.jpeg" alt="">
+                    <img class="img-responsive" src="resources/images/img9.jpeg" alt="aaa">
                 </a>
+              
             </div>
-            dkbdbldibj
+            
            
             <div class="col-lg-3 col-md-4 col-xs-6 thumb">
                 <a class="thumbnail" href="showProductsBySubCategory/30102">
@@ -213,7 +220,7 @@
                     <img class="img-responsive" src="resources/images/img8.jpeg" alt="">
                 </a>
             </div>
-            bdbd
+          
         </div>
 
         <hr>
@@ -341,11 +348,10 @@
 	</div>
  -->
 
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
+<div class="ex4">
+Policies:Returns PolicyTerms of useSecurityPrivacyInfringement© 2007-2017 MyShoppingCart.com.
+</div>
+
 
 
 	<%@include file="footer.jsp"%>

@@ -15,15 +15,15 @@
         
           <tr> 
            <td>Name : </td>
-           <td><form:input path="name"  /></td>
+           <td><form:input path="name" type="text" required="true"  title = "enter Name" /></td>
           </tr>
           <tr>    
           <td>UserId : </td>
-           <td><form:input path="id"  /></td>
+           <td><form:input path="id" type="text" required="true"  title = "enter id"/></td>
           </tr>
           <tr>    
           <td>Password : </td>
-           <td><form:input path="password"  /></td>
+           <td><form:input path="password" type="password" pattern="{5,10}"  required="true" title = "week password"/></td>
           </tr>
           <tr>    
           

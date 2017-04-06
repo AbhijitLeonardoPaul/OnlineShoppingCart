@@ -69,7 +69,10 @@
 				</tr>
 			</thead>
 			<tbody>
+			<c:set var="tot" value="0" scope="session"/>
 				<c:forEach var="cartItems" items="${list}">
+				
+				
 					<tr>
 						<td data-th="Product">
 							<div class="row">
@@ -89,6 +92,9 @@
 
 						</td>
 						<td data-th="Subtotal" class="text-center">${cartItems.subTotal}</td>
+						
+						<c:set var="tot"  value="${tot +cartItems.subTotal } " scope="session"/>
+						
 
 						<td class="actions" data-th="">
 							
@@ -108,7 +114,7 @@
 							class="fa fa-angle-left"></i> Continue Shopping</a></td>
 					<td colspan="2" class="hidden-xs"></td>
 					<td class="hidden-xs text-center"><strong>Total
-							${cart.grandTotal }</strong></td>
+							${tot}</strong></td>
 					<td><a href="/Ecart/billing" class="btn btn-success btn-block">Checkout
 							<i class="fa fa-angle-right"></i>
 					</a></td>

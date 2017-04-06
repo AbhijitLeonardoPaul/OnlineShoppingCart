@@ -17,7 +17,7 @@ public class User implements Serializable {
 	@NotEmpty(message = "Please enter User Name")
 	private String name;
 	@NotEmpty(message = "Please enter Password")
-	@Length(min=5 , max=5)
+	@Length(min=5 , max=10)
 	private String password;
 	private String role;
 	private boolean enabled;

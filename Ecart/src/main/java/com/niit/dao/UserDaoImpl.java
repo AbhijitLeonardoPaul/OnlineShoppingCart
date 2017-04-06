@@ -48,6 +48,19 @@ public class UserDaoImpl implements UserDao {
 		Session session = getSession();
 		return (User) session.get(User.class, userId);
 	}
+	
+	public void updateUser(User user) {
+		// TODO Auto-generated method stub
+		Session session = getSession();
+
+		
+
+		session.update(user);
+
+		session.flush();
+
+		session.close();
+	}
 
 	/*public List<Users> getAllUsers() {
 		// TODO Auto-generated method stub
@@ -71,18 +84,7 @@ public class UserDaoImpl implements UserDao {
 
 	}
 
-	public void updateUsers(Users users) {
-		// TODO Auto-generated method stub
-		Session session = getSession();
-
-		String s = users.getUserName();
-
-		session.update(users);
-
-		session.flush();
-
-		session.close();
-	}
+	
 
 	public void deleteUsers(int userId) {
 		// TODO Auto-generated method stub
