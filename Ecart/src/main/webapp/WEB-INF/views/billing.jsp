@@ -18,7 +18,7 @@
 
 			<tr>
 				<td>Line1 :</td>
-				<td><form:input path="line1" /></td>
+				<td><form:input path="line1" type="text" required="true"  title = "enter Name"/></td>
 			</tr>
 			<tr>
 				<td>Line2 :</td>
@@ -32,20 +32,20 @@
 
 			<tr>
 				<td>State :</td>
-				<td><form:input path="State" /></td>
+				<td><form:input path="State" type="text" required="true"  title = "enter Name"/></td>
 			</tr>
 
 			<tr>
 				<td>City :</td>
-				<td><form:input path="city" /></td>
+				<td><form:input path="city" type="text" required="true"  title = "enter Name"/></td>
 			</tr>
 			<tr>
 				<td>Pincode :</td>
-				<td><form:input path="pincode" /></td>
+				<td><form:input path="pincode" type="text" required="true"  title = "enter Name"/></td>
 			</tr>
 			<tr>
 				<td>Phone Number :</td>
-				<td><form:input path="phoneNumber" /></td>
+				<td><form:input path="phoneNumber" type="text" required="true"  title = "enter Number"/></td>
 			</tr>
 			<tr>
 				<td></td>

@@ -32,10 +32,10 @@ public class HomeController {
 	    
 	}
 
-	/*@RequestMapping("/menu")
+	@RequestMapping("/adminmenu")
 	public String menu() {
-		return "menu";
-	}*/
+		return "adminmenu";
+	}
 	@RequestMapping("/footer")
 	public String footer() {
 		return "footer";
