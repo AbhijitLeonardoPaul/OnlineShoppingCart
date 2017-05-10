@@ -8,4 +8,7 @@ import com.niit.model.User;
 public interface SubCategoryDao {
 	List<SubCategory>   getAllSubCategory(int categoryId);
 	public SubCategory getSubCategoryBysubCategoryId(int subCategoryId);
+	List<SubCategory>   list();
+
+	
 }

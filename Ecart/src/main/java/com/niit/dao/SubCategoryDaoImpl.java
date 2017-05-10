@@ -1,5 +1,6 @@
 package com.niit.dao;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.hibernate.Query;
@@ -42,12 +43,32 @@ public class SubCategoryDaoImpl implements SubCategoryDao {
 		List<SubCategory> subCategoryList = query.list();
 
 		return subCategoryList;
+		
 	}
 	public SubCategory getSubCategoryBysubCategoryId(int subCategoryId) {
 		Session session = getSession();
 
 		return (SubCategory) session.get(SubCategory.class, subCategoryId);
 	}
+
+
+
+	public List<SubCategory> list() {
+		// TODO Auto-generated method stub
+		Session session = getSession();
+
+		Query query = session.createQuery("from SubCategory");
+		
+		List<SubCategory> subCategoryList = query.list();
+
+		return subCategoryList;
+	}
+
+
+
+
+
+
 	
 		
 	

@@ -33,7 +33,11 @@ public class ProductController implements Serializable {
 	SubCategoryDao  subCategoryDao;
 	@RequestMapping("/productentry")
 	public ModelAndView showform() {
-		return new ModelAndView("productEntry", "command", new Product());
+		
+		 ModelAndView mv = new ModelAndView("productEntry", "command", new Product());
+		 mv.addObject("subCategoryList",subCategoryDao.list());
+		return mv;
+		
 	}
 
 	@RequestMapping(value="/save",method = RequestMethod.POST)  
@@ -62,10 +66,18 @@ public class ProductController implements Serializable {
 	product.setProductImage(productImage);
 	System.out.println( productImage);
 	productDao.addProducts(product);
+	 
+	
+	
+	
+	
+	
     return new ModelAndView("redirect:/myproducts");
+    
         }//will redirect to viewusers request mapping  
         else
         {
+        	
         	productDao.addProducts(product);
             return new ModelAndView("redirect:/myproducts");
         	
@@ -82,13 +94,23 @@ public class ProductController implements Serializable {
     public ModelAndView edit(@PathVariable int id){  
         Product Product=productDao.getProductById(id); 
         
-        return new ModelAndView("producteditform","command",Product);  
+         ModelAndView mv = new ModelAndView("producteditform","command",Product);  
+        
+        
+        mv.addObject("subCategoryList",subCategoryDao.list());
+        String photo= Product.getProductImage();
+        mv.addObject("photo",photo);
+        return mv;
+        
+        
     }  
 	@RequestMapping(value="/editsave",method = RequestMethod.POST)  
-    public ModelAndView editsave(@ModelAttribute("Product") Product Product){  
-		productDao.updateProducts(Product);
-		SubCategory s=subCategoryDao.getSubCategoryBysubCategoryId(Product.getProductSubCategory().getSubCategoryId());
-		Product.setProductSubCategory(s);
+    public ModelAndView editsave(@ModelAttribute("product") Product product){  
+		System.out.println(product.getProductName()+" "+product.getProductSubCategory().getSubCategoryName());
+		SubCategory s=subCategoryDao.getSubCategoryBysubCategoryId(product.getProductSubCategory().getSubCategoryId());
+		System.out.println("sub cat id "+s.getSubCategoryId());
+		product.setProductSubCategory(s);
+		productDao.updateProducts(product);
         return new ModelAndView("redirect:/myproducts");  
     }  
 	@RequestMapping(value="/deleteproduct/{id}",method = RequestMethod.GET)  

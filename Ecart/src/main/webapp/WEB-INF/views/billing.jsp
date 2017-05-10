@@ -22,12 +22,12 @@
 			</tr>
 			<tr>
 				<td>Line2 :</td>
-				<td><form:input path="line2" /></td>
+				<td><form:input path="line2" type="text" required="true"  title = "enter Name" /></td>
 			</tr>
 			<tr>
 
 				<td>Landmark :</td>
-				<td><form:input path="Landmark" /></td>
+				<td><form:input path="Landmark" type="text" required="true"  title = "enter Name" /></td>
 			</tr>
 
 			<tr>

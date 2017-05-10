@@ -13,7 +13,7 @@
         
           <tr>    
           <td>SubCategory Id : </td>
-           <td><form:input path="productSubCategory.subCategoryId" /> </td>
+           <td><form:select items="${subCategoryList}" itemLabel="subCategoryName" itemValue="subCategoryId" path="productSubCategory.subCategoryId"></form:select></td>
           </tr> 
         <tr>    
           <td>Name : </td>
