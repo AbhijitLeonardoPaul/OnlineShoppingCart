@@ -179,7 +179,7 @@
 <div id="wrapper">
     <!-- Navigation -->
      <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-        Brand and toggle get grouped for better mobile display
+        
         <div class="navbar-header">
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
                 <span class="sr-only">Toggle navigation</span>
@@ -213,14 +213,14 @@
         <div class="collapse navbar-collapse navbar-ex1-collapse">
             <ul class="nav navbar-nav side-nav">
                 <li>
-                    <a href="#" data-toggle="collapse" data-target="#submenu-1"><i class="fa fa-fw fa-search"></i> MENU 1 <i class="fa fa-fw fa-angle-down pull-right"></i></a>
+                    <a href="#" data-toggle="collapse" data-target="#submenu-1"><i class="fa fa-fw fa-search"></i> MENU <i class="fa fa-fw fa-angle-down pull-right"></i></a>
                     <ul id="submenu-1" class="collapse">
                         <li><a href="productentry"><i class="fa fa-angle-double-right"></i> Add New product</a></li>
                         <li><a href="home"><i class="fa fa-angle-double-right"></i> HOME</a></li>
-                        <li><a href="#"><i class="fa fa-angle-double-right"></i> SUBMENU 1.3</a></li>
+                   
                     </ul>
                 </li>
-                <li>
+               <!--  <li>
                     <a href="#" data-toggle="collapse" data-target="#submenu-2"><i class="fa fa-fw fa-star"></i>  MENU 2 <i class="fa fa-fw fa-angle-down pull-right"></i></a>
                     <ul id="submenu-2" class="collapse">
                         <li><a href="#"><i class="fa fa-angle-double-right"></i> SUBMENU 2.1</a></li>
@@ -237,7 +237,7 @@
                 <li>
                     <a href="faq"><i class="fa fa-fw fa fa-question-circle"></i> MENU 5</a>
                 </li>
-            </ul>
+            </ul> -->
         </div>
         <!-- /.navbar-collapse -->
     </nav>

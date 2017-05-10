@@ -44,7 +44,7 @@
       
      
 <security:authorize access="hasRole('ROLE_ADMIN')">				
-  <li><a href="myproducts">Manage Product </a></li> 
+  <li><a href="${pageContext.request.contextPath}/myproducts">Manage Product </a></li> 
    </security:authorize>
   
 </ul>
@@ -60,7 +60,7 @@
         <c:if test="${pageContext.request.userPrincipal.name != null}">
 
         <li><a class="navbar-brand">Welcome ${pageContext.request.userPrincipal.name}</a></li>
-        <li><a href="Showcart"><span class="glyphicon glyphicon-shopping-cart"></span> </a></li>
+        <li><a href="${pageContext.request.contextPath}/Showcart"><span class="glyphicon glyphicon-shopping-cart"></span> </a></li>
 						<li><a href="${pageContext.request.contextPath}/logout"><span class="glyphicon glyphicon-log-out"></span>
 						Logout</a></li>
 						</c:if>

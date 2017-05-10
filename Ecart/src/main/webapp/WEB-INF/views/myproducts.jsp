@@ -35,29 +35,31 @@
 
 
 
-
-	<table border="2" width="70%" cellpadding="2">
+	<table border="2" width="80%" cellpadding="2">
 		<tr>
-			<th>Id</th>
+			<th>&nbsp;Id</th>
 			<th>Name</th>
 			<th>Description</th>
 			<th>Stock</th>
 			<th>Price</th>
 			<th>image</th>
+			<th>Sub Category</th>
 			<th></th>
 			<th></th>
+			
 		</tr>
 		<c:forEach var="product" items="${list}">
 			<tr>
-				<td>${product.productId}</td>
-				<td>${product.productName}</td>
-				<td>${product.productDescription}</td>
-				<td>${product.productStock}</td>
-				<td>${product.productPrice}</td>
-				<td>${product.productImage}<br> <img
+				<td>&nbsp;&nbsp;${product.productId}</td>
+				<td>&nbsp;${product.productName}</td>
+				<td>&nbsp;${product.productDescription}</td>
+				<td>&nbsp;${product.productStock}</td>
+				<td>&nbsp;${product.productPrice}</td>
+				<td>&nbsp;${product.productImage}<br> <img
 					src="${pageContext.request.contextPath}/${product.productImage}"
-					style="height: 100px; width: 50px;" 25"" />
+					style="height: 100px; width: 50px; "25" />
 				</td>
+				<td>&nbsp;${product.productSubCategory.subCategoryName} </td>
 
 
 				<td><a
